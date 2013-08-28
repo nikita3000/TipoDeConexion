@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Muestra el tipo de conexión</title>
+<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+<script type="text/javascript" charset="utf-8">
+
+	//Espera a que se inicie PhoneGap
+	document.addEventListener("deviceready", tipoConexion, false);
+
+	function tipoConexion() {
+		
+		// Se declara una variable que almacena el tipo de conexión
+		var tipo = navigator.network.connection.type;
+		
+		var valorConexion = {};
+		valorConexion[Connection.UNKNOWN] = 'Desconocida';
+		valorConexion[Connection.ETHERNET] = 'Ethernet';
+		valorConexion[Connection.WIFI] = 'Wifi';
+		valorConexion[Connection.CELL_2G] = '2G';
+		valorConexion[Connection.CELL_3G] = '3G';
+		valorConexion[Connection.CELL_4G] = '4G';
+		valorConexion[Connection.NONE] = 'No se ha detectado ninguna red';
+		
+		document.write('Tipo de conexión: ' + valorConexion[tipo]);
+	}
+</script>
+
+</head>
+<body>
+	
+</body>
+</html>
